@@ -1,1 +1,4 @@
-$(".dropdown-trigger").dropdown();
+$(function () {
+	$("#header").load("webapp/header.html");
+	$(".dropdown-trigger").dropdown();
+});
