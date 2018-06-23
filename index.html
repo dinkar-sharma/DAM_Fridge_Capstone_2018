@@ -41,9 +41,9 @@
                   <form class="modal-content animate" action="login.php" method = "POST">
                      <div class="container">
                         <label for="uname"><b>Username</b></label>
-                        <input type="text" placeholder="Enter Username" id='username' required>
+                        <input type="text" placeholder="Enter Username" name="uername" required>
                         <label for="psw"><b>Password</b></label>
-                        <input type="password" placeholder="Enter Password" id='password' required>
+                        <input type="password" placeholder="Enter Password" name="password" required>
                         <button class="waves-effect waves_light btn-small" type="submit" ><i class="material-icons">send</i></button>
                         <a class="waves-effect waves_light btn-small" type="submit" href="confirm.php"><i class="material-icons">mode_edit</i></a>
                         <a class="waves-effect waves_light btn-small" type="submit" href="signup.php"><i class="material-icons">person_add</i></a>
@@ -51,7 +51,6 @@
                      </div>
                      <!-- <div class="container" style="background-color:#f1f1f1">
                         </div> -->
-                        <span class="psw"><a href="confirm.html">Forgot password?</a></span>
                   </form>
                </div>
             </ul>
