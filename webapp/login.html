@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+   <title>Log In</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title></title>
@@ -16,13 +16,17 @@
 </head>
 
 <body>
+  
     <!-- Button to open the modal login form -->
     <div class="container">
+      <section class="bg-grey-light">
+    <form class="container form-group-lg bg-grey-dark" class="col s12" action="login.php" method="post">
+            <h1>Login</h1>
         <div class="row">
-            <form class="col s12">
+            
                 <div class="row">
                     <div class="input-field col s12">
-                        <input id="email" type="email" class="validate">
+                        <input id="email" type="email" class="validate" autocomplete="on">
                         <label for="email">Email</label>
                     </div>
                 </div>
@@ -40,6 +44,7 @@
             </form>
         </div>
     </div>
+  </section>
 </body>
 <!--JavaScript at end of body for optimized loading-->
 <script type="text/javascript" src="webapp/3rd-party/materialize/js/materialize.js"></script>

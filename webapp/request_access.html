@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Access</title>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title></title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="webapp/3rd-party/materialize/css/materialize.css"  media="screen,projection"/>
+      <!-- jQuery CDN -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <!--Let browser know website is optimized for mobile-->
+      <!--  <script>
+         // Get the modal
+         var modal = document.getElementById('id01');
+         
+         // When the user clicks anywhere outside of the modal, close it
+         window.onclick = function(event) {
+             if (event.target == modal) {
+                 modal.style.display = "none";
+             }
+         }
+         onclick="document.getElementById('id01').style.display='none'"
+         
+         </script> -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+    
+    <section class="bg-grey-light">
+        <form id="form-validate" class="container form-group-lg bg-grey-dark" action="request_access.php" method="post">
+            <h1>Request-Access</h1>
+            <div class="input-group ">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input class="form-control" id="username" name="username" placeholder="Choose a Username"
+                type="text">
+            </div>
+             <div class="input-group ">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input id="email" name="email" type="email" class="validate" autocomplete="on" placeholder="Choose an email">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                <input class="form-control" id="password" name="password" placeholder="Choose a Password"
+                type="password">
+            </div>
+            <div class="form-group" id="addBut">
+                <button class="btn btn-default" type="submit">Add me</button>
+                <button class="btn btn-default" type="submit" href="index.html">Go to index page</button>
+            </div>
+
+        
+        </form>
+    </section>
+   
+</body>
+</html>
