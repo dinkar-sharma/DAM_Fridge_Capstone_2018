@@ -20,7 +20,7 @@
   	$res_e->execute();
   	if ($res_e->rowCount() > 0) {
   	  echo "Sorry... email is already taken";
-  	  echo 	 	
+  	 	 	
  
   	}
 
@@ -40,7 +40,7 @@
 	}
 	else
 	{
-		header("Location: index.html");
+		header("Location: ../index.html");
 	}
 
 		}
