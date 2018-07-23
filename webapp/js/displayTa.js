@@ -12,7 +12,7 @@ function display_database(databaseName)
               document.getElementById('fridge-content').innerHTML = this.responseText;
             }
     };
-    xhttp.open("GET", "php/display.php?q="+databaseName, true);
+    xhttp.open("GET", "dbconnect.php?q="+databaseName, true);
     xhttp.send();
 }
 

@@ -20,10 +20,11 @@
   	$res_e->execute();
   	if ($res_e->rowCount() > 0) {
   	  echo "Sorry... email is already taken";
+
   	 	 	
  
   	}
-
+	
   	else{
      $query = 'INSERT INTO users (Username, Password, Email)
 			  VALUES (:username, :password, :email) ';

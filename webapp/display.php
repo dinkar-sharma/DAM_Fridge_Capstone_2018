@@ -1,4 +1,12 @@
 
+<?php 
+    session_start();
+    if(!isset($_SESSION['username']))
+    {
+        echo "<p>You are not authorized users. Click <a href=../request_access.html> here to sign up.</p>"; 
+        die();
+    }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +16,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="3rd-party/materialize/css/materialize.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="../3rd-party/materialize/css/materialize.css" media="screen,projection" />
     <!-- jQuery CDN -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!--Let browser know website is optimized for mobile-->
@@ -22,9 +30,7 @@
       <a href="index.html" class="brand-logo">DAM Fridge</a>
 
       <ul class="right hide-on-med-and-down">
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="request_access.html">Sign-Up</a></li>
-        <li><a href="login.html">Login</a></li>
+        <li><a href="../about.html">About Us</a></li>
         <li><a href="logout.php">Logout</a></li>
         
       </ul>
@@ -91,7 +97,7 @@
         <tbody id="fridge-content"></tbody>
       </table>
          
-       <script src="js/displayTa.js"></script>
+       <script src="../js/displayTa.js"></script>
     </section>
     <footer id="foot" class="col-sm-12 text-center">
     </footer>
