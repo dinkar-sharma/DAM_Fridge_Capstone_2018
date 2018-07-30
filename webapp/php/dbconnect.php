@@ -4,10 +4,6 @@
  // echo $_SESSION['email'];
     function display_table($dbConn)
     {
-        // $query = 'SELECT ID, Item, Quantity, TStamp FROM (SELECT * FROM itemlist ORDER BY ID DESC LIMIT 10) sub ORDER BY ID ASC';
-        // $query = 'SELECT ID, Item, Quantity, TStamp FROM itemlist WHERE NOT EXISTS (SELECT users.Email FROM users WHERE users.Email = itemlist.Email)';
-
-        // $query = 'SELECT Item, Quantity, TStamp FROM itemlist where Email = '$_SESSION['email']'';
 
         $query = "SELECT Item, Quantity, TStamp FROM itemlist WHERE Email= '".$_SESSION['email']."'";
 

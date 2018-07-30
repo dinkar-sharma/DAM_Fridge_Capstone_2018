@@ -27,6 +27,8 @@
         {
            // echo $row[1];
             $authenticated = TRUE;
+            $db->query('TRUNCATE TABLE currentuser');
+            $db->query("INSERT INTO currentuser(email) VALUES ('$email')");
             break;
         }
     }
@@ -60,7 +62,7 @@
     else
 
     {
-        echo "<p>Invalid email or password, click <a href=../login.html> here</a>  to go back and try again</p>";
+        echo "<p>Invalid email or password, click here<a href=../loginDAM.html> here</a>  to go back and try again</p>";
 
         echo "<p>Or click <a href=../request_access.html> here</a>  to sign up.</p>"; 
 
