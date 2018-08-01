@@ -1,10 +1,17 @@
-$(function () {
-	//$("#header").load("webapp/header.html");
-	$(".dropdown-trigger").dropdown();
+/*Index page*/
+
+function init_page() {
+	$("#ForgetPasswordContainer").hide();
+}
+
+$("#ForgetPasswordLink").click(function(event) {
+	console.log("Clicked on forget password link.");
+	$("#SignInContainer").hide('slow');
+	$("#ForgetPasswordContainer").show('slow');
 });
 
 
-  $(document).ready(function(){
-    $('.sidenav').sidenav();
-    $('.fixed-action-btn').floatingActionButton();
-  });
+
+$(document).ready(function() {
+	init_page();
+});
