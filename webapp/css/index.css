@@ -2,7 +2,6 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    font: Roboto;
 }
 
 main {
@@ -38,8 +37,4 @@ input::placeholder {
 
 #ResetPasswordTitle {
 	font-weight: lighter;
-}
-
-.page-footer {
-	background-color: #c3cb71;
 }

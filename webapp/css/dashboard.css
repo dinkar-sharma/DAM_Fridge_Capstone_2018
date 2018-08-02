@@ -1,0 +1,14 @@
+/*Dashboard css*/
+
+.brand-logo {
+	float: left;
+	position: relative;
+}
+
+
+#NotificationDropdown {
+	display: block;
+
+}
+
+/*style="display: block; width: 450px; left: 1059px; top: 64px; height: 581px; transform-origin: 100% 0px 0px; opacity: 1; transform: scaleX(1) scaleY(1);"*/

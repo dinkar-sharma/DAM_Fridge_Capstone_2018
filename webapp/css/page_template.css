@@ -1,0 +1,16 @@
+/*Basic template for all pages*/
+body {
+	background-color: #559e83;
+}
+
+.navbar {
+	background-color: #c3cb71;
+}
+
+.sidenav {
+	background-color: #1b85b8;
+}
+
+.page-footer {
+	background-color: #c3cb71;
+}
