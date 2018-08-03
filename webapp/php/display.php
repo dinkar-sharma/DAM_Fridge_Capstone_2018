@@ -18,11 +18,11 @@
     <link href="../3rd-party/materialize/css/split.css" rel="stylesheet"><!-- jQuery CDN -->
    
     <!-- jQuery -->
-        <script src="http://code.jquery.com/jquery.js"></script>
+        <!-- <script src="http://code.jquery.com/jquery.js"></script> -->
    
    <!-- Bootstrap JavaScript -->
     <!--     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script> -->
-        <script src="http://192.156.193.149:3000/socket.io/socket.io.js"></script>
+        <!-- <script src="http://192.156.193.149:3000/socket.io/socket.io.js"></script> -->
 <!--         <script>
              var socket = io.connect('http://142.156.193.149:3000');
               socket.on('liveStream', function(url) {
@@ -40,7 +40,7 @@
               }
         </script> -->
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta http-equiv="refresh" content="5">
+    <meta http-equiv="refresh" content="8">
 </head>
 <body>
     <header>
@@ -95,9 +95,10 @@
          </a>
     </div> -->
         </div>
-        <div class="col s6">
+        <div class="col s6"  >
             
             <section>
+                <div style="height: 500px;overflow:auto;">
                 <table id="fridge">
                     <thead>
                         <tr>
@@ -108,6 +109,7 @@
                     </thead>
                     <tbody id="fridge-content"></tbody>
                 </table>
+            </div>
                 <script src="../js/displayTa.js">
                 </script>
             </section>
@@ -126,14 +128,15 @@
 
         <div class="container">
             <section class="bg-grey-light">
-                <form action="update_item.php" class="col s12" method="Post">
+                <form action="modify.php" class="col s12" method="Post">
                       <div class="input-group ">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                         <input id="item" name="item" type="text" class="validate"  placeholder="Enter Item's Name" required>
                         <input id="quantity" name="quantity" type="number" class="validate"  placeholder="Enter Item's Quantity" required>
                      </div>
                     <div class="row">
-                        <button class="btn waves-effect waves-light" name="delete" type="submit" value="delete">Decrease Quantity <i class="material-icons right">send</i></button>
+                        <button class="btn waves-effect waves-light" name="decreaseq" type="submit" value="decreaseq">Decrease Quantity <i class="material-icons right">send</i></button>
+                         <button class="btn waves-effect waves-light" name="increaseq" type="submit" value="increaseq">Increase Quantity <i class="material-icons right">send</i></button>
                     </div>
                 </form>
             </section>
@@ -170,19 +173,21 @@
         </div>
 
 
-        <div class="fixed-action-btn">
+             <div class="fixed-action-btn">
             <div id="overlay" onclick="off()">
                 <div id="text">
                     Camera is On
                 </div>
             </div>
-            <!-- <a onclick="M.toast({html:'        ' })" class="btn">Check for Items!</a> -->
+           
 
 
             <div style="padding:20px">
-                <a class="btn-floating btn-large red" onclick="startStream()"><i class="large material-icons">camera</i></a>
+                <!-- <a class="btn-floating btn-large red" onclick="on()"><i class="large material-icons">camera</i></a> -->
+               <!--  <a class="btn-floating btn-large red" onclick="on()"><i class="large material-icons">camera</i></a> -->
+               <button class="btn waves-effect waves-light" type="submit" onclick="on()">Take Picture<i class="material-icons right">send</i></button>
             </div>
-            <script>
+          <!--   <script>
                        function on() {
                          document.getElementById("overlay").style.display = "block";
                        }
@@ -190,13 +195,19 @@
                        function off() {
                          document.getElementById("overlay").style.display = "none";
                        }
+            </script> -->
+            <script>
+            function on() {
+            window.open("../testC.html");
+}
             </script>
+
+
         </div>
 
         </div>
 
     </div>
-    <!-- <a class="btn" onclick="M.toast({html: 'I am a toast', completeCallback: function(){alert('Your toast was dismissed')}})">Check for Expired Food Items!</a> -->
     <footer class="col-sm-12 text-center" id="foot"></footer><!-- </body> -->
 </body>
  <!-- <script type="text/javascript" src="../js/refresh.js"></script> -->

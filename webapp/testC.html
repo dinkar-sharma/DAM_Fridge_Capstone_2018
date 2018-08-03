@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+<script src="http://142.156.193.149:3000/socket.io/socket.io.js"></script>
+
+  <script>
+  var socket = io.connect('http://142.156.193.149:3000');
+  socket.on('liveStream', function(url) {
+  	var url2 = 'http://142.156.193.149:3000/';
+  	var url1 = url2.concat(url);
+  	  	console.log(url1);
+    $('#stream').attr('src', url1);
+    $('.start').hide();
+  });
+
+  function startStream() {
+    $("#camera-icon").html('check');
+    socket.emit('start-stream');
+    $('.start').hide();
+  }
+  </script>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+
+      <div class="video-container">
+        <iframe id="stream" width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+    <!-- <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a> -->
+   
+    <div class="fixed-action-btn" >
+        <a id="camera" class="btn-floating btn-large red" onclick="startStream()"> ON
+         <i id="camera-icon" class="large material-icons">camera</i>
+         </a>
+          <a id="camera" class="btn-floating btn-large red" onclick="closeStream()"> OFF
+         <i id="camera-icon" class="large material-icons">camera</i>
+         </a>
+    </div>
+
+<!--     <div class="fixed-action-btn">
+      <button class="btn-floating btn-large red" type="submit" onclick="startStream()">OFF <i class="large material-icons">send</i></button>
+        <a id="camera" class="btn-floating btn-large red" onclick="startStream()"> OFF
+         <i id="camera-icon" class="large material-icons">camera</i>
+         </a>
+    </div>  -->
+</body>
+
+</html>
