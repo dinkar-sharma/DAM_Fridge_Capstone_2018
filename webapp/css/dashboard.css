@@ -1,14 +1,44 @@
 /*Dashboard css*/
 
-.brand-logo {
-	float: left;
-	position: relative;
+nav.navbar .brand-logo {
+    position: relative;
+    float: left;
+    font-size: 18px;
+    padding-left: 20px;
 }
 
-
-#NotificationDropdown {
-	display: block;
-
+.logo-container {
+    padding: 0 16px !important;
+    height: 64px;
+    line-height: 64px;
+    font-size: 24px !important;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+    box-sizing: content-box;
 }
 
-/*style="display: block; width: 450px; left: 1059px; top: 64px; height: 581px; transform-origin: 100% 0px 0px; opacity: 1; transform: scaleX(1) scaleY(1);"*/
+.sidenav .collapsible>li.waves-effect {
+    display: block;
+}
+
+.sidenav .collapsible .collapsible-header {
+    text-transform: uppercase;
+    height: 64px;
+    line-height: 64px;
+}
+
+.sidenav .collapsible>.active .collapsible-header .chevron {
+    transform: rotate(-90deg);
+}
+
+.sidenav .collapsible .collapsible-header .chevron {
+    float: right;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 20px 0 0 0;
+    transition: transform .2s;
+}
+
+/*#calendar-wrapper {
+	background-color: #5a5255;
+}*/

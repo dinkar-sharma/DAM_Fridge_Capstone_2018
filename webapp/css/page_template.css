@@ -1,16 +1,23 @@
 /*Basic template for all pages*/
+
 body {
-	background-color: #559e83;
+    background-color: #559e83;
+}
+
+@media only screen and (min-width: 900px) {
+    body.has-fixed-sidenav {
+        padding-left: 300px;
+    }
 }
 
 .navbar {
-	background-color: #c3cb71;
+    background-color: #c3cb71;
 }
 
 .sidenav {
-	background-color: #1b85b8;
+    background-color: #1b85b8;
 }
 
 .page-footer {
-	background-color: #c3cb71;
+    background-color: #c3cb71;
 }
