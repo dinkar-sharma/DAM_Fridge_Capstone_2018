@@ -1,8 +1,8 @@
 /*Dashboard*/
 
 function init_page() {
-    /*Initialize all materialize plugins*/
-    M.AutoInit();
+	$("#calendar-wrapper").hide();
+	$("#settings-wrapper").hide();
 }
 
 function init_calendar() {
@@ -20,11 +20,43 @@ function init_calendar() {
     })
 }
 
-$("#calendar-start").click(function(event) {
-	/* Act on the event */
-});
+function userClickEvent(Event) {
+	var pressed = Event.data.pressed;
+
+	if (pressed == "calendar") {
+		$(".brand-logo").text('Calendar');
+		$("#settings-wrapper").hide();
+		$("#calendar-wrapper").show();
+	} else if (pressed == "settings") {
+		$(".brand-logo").text('Settings');
+		$("#calendar-wrapper").hide();
+		$("#settings-wrapper").show();
+	} else if (pressed == "dasboard") {
+		$(".brand-logo").text('Dashboard');
+		$("#calendar-wrapper").hide();
+		$("#settings-wrapper").hide();
+	}
+	else {
+		console.log('None pressed');
+	}
+}
+
+$("#calendar-start").on("click", {
+	pressed: "calendar"
+}, userClickEvent);
+
+$("#settings-start").on("click", {
+	pressed: "settings"
+}, userClickEvent);
+
+$("#dashboard-start").on("click", {
+	pressed: "dasboard"
+}, userClickEvent);
+
 
 $(document).ready(function() {
-	init_calendar();
     init_page();
+	init_calendar();
+    /*Initialize all materialize plugins*/
+    M.AutoInit();
 });

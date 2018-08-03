@@ -24,7 +24,7 @@
     <header>
         <nav class="navbar">
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo white-text">Home</a>
+                <a href="#!" class="brand-logo white-text">Dashboard</a>
                 <ul id="nav-mobile" class="right">
                     <li class="hide-on-med-and-down">
                         <a href="#!" data-target="NotificationDropdown" class="dropdown-trigger waves-effect"><i class="material-icons">notifications</i>
@@ -53,7 +53,7 @@
                                 <div class="collapsible-body">
                                     <ul>
                                         <li>
-                                            <a href="#!" class="waves-effect active">Dashboard
+                                            <a id="dashboard-start" href="#!" class="waves-effect active">Dashboard
                                             <i class="material-icons">web</i>
                                            </a>
                                         </li>
@@ -81,7 +81,7 @@
                                 <div class="collapsible-body">
                                     <ul>
                                         <li>
-                                            <a href="#!" class="waves-effect active">Settings
+                                            <a id="settings-start" href="#!" class="waves-effect active">Settings
                                             <i class="material-icons">settings</i></a>
                                         </li>
                                     </ul>
@@ -95,12 +95,106 @@
     </header>
     <main>
         <div class="container">
-            <div class="row">
+            <div id="calendar-wrapper" class="row">
                 <div class="col">
                     <h2 class="white-text">Month View</h2>
-                    <div id="calendar-wrapper" class="card card-panel">
+                    <div class="card card-panel">
                         <div id="calendar">
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div id="settings-wrapper" class="row">
+                <div class="col s12 m4">
+                    <span class="settings-title white-text">Profile Settings</span>
+                    <p class="white-text">Update your profile settings. </p>
+                </div>
+                <div class="col s12 m8">
+                    <div class="settings-group">
+                        <ul class="collapsible setting">
+                            <li class="">
+                                <div class="collapsible-header" tabindex="0">
+                                    <span>Username</span>
+                                    <i class="material-icons caret right">keyboard_arrow_right</i>
+                                </div>
+                                <div class="collapsible-body" style="">
+                                    <div class="input-field">
+                                        <input id="username" class="validate" type="text">
+                                        <label for="username">Username</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="collapsible-header" tabindex="0">
+                                    <span>Password</span>
+                                    <i class="material-icons caret right">keyboard_arrow_right</i>
+                                </div>
+                                <div class="collapsible-body" style="">
+                                    <div class="input-field">
+                                        <input id="password" class="validate" type="Password">
+                                        <label for="password">Password</label>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="collapsible-header" tabindex="0">
+                                    <span>Gender</span>
+                                    <i class="material-icons caret right">keyboard_arrow_right</i>
+                                </div>
+                                <div class="collapsible-body" style="">
+                                    <form action="#">
+                                        <p>
+                                            <label>
+                                                <input class="with-gap" name="group1" checked="" type="radio">
+                                                <span>Male</span>
+                                            </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                                <input class="with-gap" name="group1" type="radio">
+                                                <span>Female</span>
+                                            </label>
+                                        </p>
+                                        <p>
+                                            <label>
+                                                <input class="with-gap" name="group1" type="radio">
+                                                <span>Rather not say</span>
+                                            </label>
+                                        </p>
+                                    </form>
+                                </div>
+                            </li>
+                            <li class="">
+                                <div class="collapsible-header" tabindex="0">
+                                    <span>Address</span>
+                                    <i class="material-icons caret right">keyboard_arrow_right</i>
+                                </div>
+                                <div class="collapsible-body" style="">
+                                    <div class="row">
+                                        <div class="input-field col s8">
+                                            <input id="address" class="validate" type="text">
+                                            <label for="address">Address</label>
+                                        </div>
+                                        <div class="input-field col s4">
+                                            <input id="city" class="validate" type="text">
+                                            <label for="city">City</label>
+                                        </div>
+                                        <div class="input-field col s4">
+                                            <input id="state" class="validate" type="text">
+                                            <label for="state">State</label>
+                                        </div>
+                                        <div class="input-field col s4">
+                                            <input id="zip" class="validate" type="text">
+                                            <label for="zip">Zip Code</label>
+                                        </div>
+                                        <div class="input-field col s4">
+                                            <input id="country" class="validate" type="text">
+                                            <label for="country">Country</label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -116,16 +210,16 @@
                 <div class="col s6 m3">
                     <h5>About</h5>
                     <ul>
-                        <li><a href="#!">Team</a></li>
-                        <li><a href="#!">Docs</a></li>
+                        <li><a class="grey-text text-lighten-4" href="#!">Team</a></li>
+                        <li><a class="grey-text text-lighten-4" href="#!">Docs</a></li>
                     </ul>
                 </div>
                 <div class="col s6 m3">
                     <h5>Contact</h5>
                     <ul>
-                        <li><a href="https://github.com/dinkar-sharma/DAM_Fridge_Capstone_2018">Github</a></li>
-                        <li><a href="#!">Linkdin</a></li>
-                        <li><a href="#!">Email</a></li>
+                        <li><a class="grey-text text-lighten-4" href="https://github.com/dinkar-sharma/DAM_Fridge_Capstone_2018">Github</a></li>
+                        <li><a class="grey-text text-lighten-4" href="#!">Linkdin</a></li>
+                        <li><a class="grey-text text-lighten-4" href="#!">Email</a></li>
                     </ul>
                 </div>
             </div>
