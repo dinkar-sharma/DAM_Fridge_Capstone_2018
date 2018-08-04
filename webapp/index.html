@@ -27,18 +27,18 @@
                 </div>
                 <div class="col m3 xl4"></div>
                 <div class="col s12 m6 xl4">
-                    <form id="SignInForm" class="col s12 m12">
+                    <form id="SignInForm" class="col s12 m12" action="php/authenticate.php" method="post">
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">account_box</i>
-                                <input placeholder="Enter your email address" id="email" type="email" class="validate">
+                                <input placeholder="Enter your email address" name="email" id="email" type="email" class="validate" autocomplete="on" required="">
                                 <label for="email">Email</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-field col s12">
                                 <i class="material-icons prefix">lock</i>
-                                <input placeholder="Enter your password" id="password" type="password" class="validate">
+                                <input placeholder="Enter your password" name="password" id="password" type="password" class="validate" required="">
                                 <label for="password">Password</label>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
                         </button>
                         <p class="">
                             <a id="ForgetPasswordLink" href="#ForgetPasswordContainer">Forget password?</a> or
-                            <a href="#!">Sign up</a>
+                            <a id="SignUpLink" href="#SignUpContainer">Sign up</a>
                         </p>
                     </form>
                 </div>
@@ -59,7 +59,7 @@
                 <h2 id="ResetPasswordTitle" class="center-align white-text">Reset your password</h2>
                 <div class="col m3 xl4"></div>
                 <div class="col s12 m6 xl4">
-                    <form id="ForgetPasswordForm" class="col s12 m12">
+                    <form id="ForgetPasswordForm" class="col s12 m12" action="php/mail.php" method="post">
                         <p class="white-text">Enter your email address to receive a link to reset your password.</p>
                         <div class="row">
                             <div class="input-field col s12">
@@ -69,6 +69,40 @@
                             </div>
                         </div>
                         <button id="SendEmail" class="btn waves-effect waves-light red" type="submit" name="action">Send Me a Link
+                            <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+                <div class="col m3 xl4"></div>
+            </div>
+        </div>
+        <div id="SignUpContainer" class="container">
+            <div class="row">
+                <div class="">
+                    <h2 id="SignUpTitle" class="center-align white-text">Sign in to DAM Fridge</h2>
+                </div>
+                <div class="col m3 xl4"></div>
+                <div class="col s12 m6 xl4">
+                    <form id="SignUpForm" class="col s12 m12" action="php/requestAccess.php" method="post">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">account_box</i>
+                                <input placeholder="Enter your email address" name="email" id="email" type="email" class="validate" autocomplete="on" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">face</i>
+                                <input placeholder="Create a username" name="username" id="username" required="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">lock</i>
+                                <input placeholder="Create a password" name="password" id="password" type="password" required="">
+                            </div>
+                        </div>
+                        <button id="SignUpButton" class="btn waves-effect waves-light red" type="submit" name="action">Sign Up
                             <i class="material-icons right">send</i>
                         </button>
                     </form>

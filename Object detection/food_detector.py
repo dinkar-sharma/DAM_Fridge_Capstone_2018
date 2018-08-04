@@ -155,7 +155,7 @@ def get_predicted_items():
 	  min_score_thresh=MIN_SCORE_THRESH,
 	  line_thickness=8)
 
-	tensorflow_output_image = ('/mnt/nfs/image/done/image-{}.png'.format(datetime.datetime.now()))
+	tensorflow_output_image = ('/opt/lampp/htdocs/DAM_Fridge_Capstone_2018/webapp/images/done/image-{}.png'.format(datetime.datetime.now()))
 	logging.info("Saved tensorflow output image [{}].".format(tensorflow_output_image))
 	plt.figure(figsize=IMAGE_SIZE)
 	plt.imshow(image_np)

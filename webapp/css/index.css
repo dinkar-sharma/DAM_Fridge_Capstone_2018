@@ -10,7 +10,7 @@ main {
 }
 
 
-input::placeholder {
+input {
 	color: white;
 }
 
@@ -28,6 +28,13 @@ input::placeholder {
 	background-color: #5a5255;
 }
 
+#SignUpForm {
+	border: 5px solid #ae5a41;
+	border-radius: 7%;
+	background-color: #5a5255;
+	height: 380px;
+}
+
 #ForgetPasswordForm {
 	border: 5px solid #ae5a41;
 	border-radius: 7%;
@@ -36,5 +43,9 @@ input::placeholder {
 }
 
 #ResetPasswordTitle {
+	font-weight: lighter;
+}
+
+#SignUpTitle {
 	font-weight: lighter;
 }
