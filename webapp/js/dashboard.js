@@ -5,7 +5,7 @@ function init_page() {
     $("#settings-wrapper").hide();
     $('.materialboxed').materialbox();
     $.ajax({
-        url: 'php/userInfo.php',
+        url: '../php/userInfo.php',
         type: 'POST',
         success: function(res) {
             var icon = "<i class=\"material-icons left\">person</i>"
@@ -31,32 +31,62 @@ function init_calendar() {
     })
 }
 
-function show_image(){
+function show_image() {
     $.ajax({
-        url: 'php/imageLocation.php',
+        url: '../php/imageLocation.php',
         type: 'POST',
         success: function(res) {
-        	var imageLocation = res.data.imageLocation;
-        	var array = imageLocation.split('/');
-        	var relativeLocation = array.splice(-3).join('/');
-        	console.log(relativeLocation);
-        	$("#image").attr('src', relativeLocation);
+            var imageLocation = res.data.imageLocation;
+            if (imageLocation != '') {
+                var array = imageLocation.split('/');
+                var relativeLocation = array.splice(-3).join('/');
+                $("#image").attr('src', relativeLocation);
+            }
+            else {
+                $("#viewfinder-wrapper").hide();
+            }
         },
         error: function(res) {}
     });
 }
 
+function fetch_user_data() {
+    var userItems = [];
+
+    $.ajax({
+        url: '../php/userItems.php',
+        type: 'POST',
+        success: function(res) {
+            userItems = res.data;
+            console.log(userItems);
+        },
+        error: function(res) {}
+    });
+
+    return userItems;
+}
+
 function init_dataTable() {
+    var data = fetch_user_data();
+    var data2 = [
+    {
+        "Item" : "apple",
+        "Quantity" : "3",
+        "TStamp" : "asdasfd"
+    }
+    ]
     $('#table').DataTable({
         "processing": true,
         "serverSide": true,
-        "ajax": "php/userItems.php",
-        "columns": [
-            { "data": "Item" },
-            { "data": "ItemPic" },
-            { "data": "Quantity" },
-            { "data": "TStamp" }
-        ]
+        "ajax" : {
+            type: 'POST',
+            url: '../php/userItems.php'
+        },
+        // "columns": [
+        //     { "data": "Item" },
+        //     { "data": "Quantity" },
+        //     { "data": "TStamp" }
+        // ]
     });
 }
 

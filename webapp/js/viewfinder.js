@@ -1,6 +1,6 @@
 function init_page() {
     $.ajax({
-        url: 'php/userInfo.php',
+        url: '../php/userInfo.php',
         type: 'POST',
         success: function(res) {
             var icon = "<i class=\"material-icons left\">person</i>"

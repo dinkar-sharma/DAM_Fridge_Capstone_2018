@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	
+
 	if (!isset($_SESSION['email'])) {
 	$msgArray = ['status' => 'error', 'msg' => 'You are not an authorized user.'];
 	echo json_encode($msgArray);

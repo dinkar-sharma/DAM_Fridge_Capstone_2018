@@ -36,7 +36,7 @@
 
 	if ($authenticated == TRUE) {
 		$_SESSION['email'] = $userEmail;
-		header("Location: ../dashboard.html");
+		header("Location: dashboard.php");
 	}
 	else {
 		$errorMessage = "Invalid user email or user password.";
