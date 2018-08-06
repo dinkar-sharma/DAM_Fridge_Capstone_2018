@@ -9,7 +9,7 @@ def connect_to_db():
 	config = {
 		'user':'admin',
 		'password':'',
-		'host': '142.156.193.62',
+		'host': '127.0.0.1',
 		'port':'3306',
 		'database': DATABASE_NAME
 	}
@@ -38,10 +38,7 @@ def get_current_user():
 	
 	row = cursor.fetchall()
 
-	if not row:
-		user = 'None'
-	else:
-		user = row[0]['email']
+	user = row[0]['email']
 
 	return user
 
@@ -71,6 +68,7 @@ def id_renumber():
 	logging.info("Renumbered Primary index.")
 
 if __name__ == '__main__':
+	get_current_user();
 	pass
 	#id_renumber()
 

@@ -11,20 +11,19 @@ function init_page() {
     });
 }
 
-var socket = io.connect('http://142.156.193.149:3000');
-socket.on('liveStream', function(url) {
-    var url2 = "http://142.156.193.149:3000/";
-    var url1 = url2.concat(url);
-    $('#stream').attr('src', url1);
-});
-
 function startStream() {
+    var socket = io.connect('http://142.156.193.149:3000');
+    socket.on('liveStream', function(url) {
+        var url2 = "http://142.156.193.149:3000/";
+        var url1 = url2.concat(url);
+        $('#stream').attr('src', url1);
+    });
     $("#camera-icon").html('check');
     socket.emit('start-stream');
 }
 
 $("#camera").click(function(event) {
-    /* Act on the event */
+
     startStream();
     $("#message").text("Click the check button to stop the viewfinder.");
 });

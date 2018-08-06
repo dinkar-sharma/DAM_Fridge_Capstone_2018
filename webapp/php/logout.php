@@ -13,7 +13,7 @@
         echo "Error connecting to database: " .$e->getMessage();
     }
 
-    $db->query('TRUNCATE TABLE currentuser');
+    $db->query("UPDATE currentuser SET email='None'");
 
 	session_destroy();
 

@@ -23,9 +23,11 @@ if __name__ == '__main__':
 
 		if os.path.isfile(FILE_PATH):
 			logging.debug("File exists.")
-			#make sure a user is logged in 
+			# make sure a user is logged in 
 			current_user = database.get_current_user()
-			if current_user is not 'None':
+			if current_user == 'None':
+				logging.debug("Currently no user is logged on.")
+			else:
 				logging.info("User [{}] is currently logged on.".format(current_user))
 				food_items, file_path = get_predicted_items()
 				if food_items is not None:
@@ -39,8 +41,6 @@ if __name__ == '__main__':
 					    logging.error("Error: %s - %s." % (e.filename, e.strerror))
 				logging.warning("Did not detect anything.")
 				pass
-			else:
-				logging.debug("Currently no user is logged on.")
 		else:
 			raise ValueError("%s isn't a file!" % FILE_PATH)
 		

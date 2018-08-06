@@ -29,86 +29,88 @@
 </head>
 
 <body class="has-fixed-sidenav">
-    <header>
-        <nav class="navbar">
-            <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Viewfinder</a>
-                <ul id="nav-mobile" class="right">
-                    <li class="hide-on-med-and-down">
-                        <a href="#!" data-target="NotificationDropdown" class="dropdown-trigger waves-effect"><i class="material-icons">notifications</i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#!" data-target="chat-dropdown" class="dropdown-trigger waves-effect"><i class="material-icons">settings</i>
-                        </a>
-                    </li>
-                </ul>
-                <a href="#!" data-target="sidenav-left" class="sidenav-trigger left">
-                    <i class="material-icons black-text">menu</i>
+<header>
+        <div class="navbar-fixed">
+            <nav class="navbar">
+                <div class="nav-wrapper">
+                    <a href="#!" class="brand-logo">Dashboard</a>
+                    <ul id="nav-mobile" class="right">
+<!--                         <li class="hide-on-med-and-down">
+                            <a href="#!" data-target="NotificationDropdown" class="dropdown-trigger waves-effect"><i class="material-icons">notifications</i>
+                            </a>
+                        </li> -->
+<!--                         <li>
+                            <a href="#!" data-target="chat-dropdown" class="dropdown-trigger waves-effect"><i class="material-icons">settings</i>
+                            </a>
+                        </li> -->
+                    </ul>
+                    <a href="#!" data-target="sidenav-left" class="sidenav-trigger left">
+                        <i class="material-icons white-text">menu</i>
+                    </a>
+                </div>
+            </nav>
+        </div>
+        <ul id="sidenav-left" class="sidenav sidenav-fixed">
+            <li>
+                <a href="#!" class="logo-container white-text">
+                    <i class="material-icons left">account_circle</i>
                 </a>
-                <ul id="sidenav-left" class="sidenav sidenav-fixed">
-                    <li>
-                        <a href="#!" class="logo-container white-text">
-                            <i class="material-icons left">person</i>
+            </li>
+            <li class="no-padding">
+                <ul class="collapsible collapsible-accordion">
+                    <li class="bold waves-effect">
+                        <a class="collapsible-header" tabindex="0">Pages
+                       <i class="chevron material-icons">chevron_left</i> 
                         </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a id="dashboard-start" href="dashboard.php" class="waves-effect active">Dashboard
+                                    <i class="material-icons">web</i>
+                                   </a>
+                                </li>
+                                <li>
+                                    <a id="viewfinder-start" href="viewfinder.php" class="waves-effect active">Viewfinder
+                                    <i class="material-icons">camera</i>
+                                   </a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
-                    <li class="no-padding">
-                        <ul class="collapsible collapsible-accordion">
-                            <li class="bold waves-effect">
-                                <a class="collapsible-header" tabindex="0">Pages
-                               <i class="chevron material-icons">chevron_left</i> 
-                                </a>
-                                <div class="collapsible-body">
-                                    <ul>
-                                        <li>
-                                            <a id="dashboard-start" href="dashboard.php" class="waves-effect active">Dashboard
-                                            <i class="material-icons">web</i>
-                                           </a>
-                                        </li>
-                                        <li>
-                                            <a id="dashboard-start" href="#!" class="waves-effect active">Viewfinder
-                                            <i class="material-icons">camera</i>
-                                           </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="bold waves-effect">
-                                <a class="collapsible-header" tabindex="0">Calendar
-                               <i class="chevron material-icons">chevron_left</i> 
-                                </a>
-                                <div class="collapsible-body">
-                                    <ul>
-                                        <li>
-                                            <a id="calendar-start" href="#!" class="waves-effect active">Calendar
-                                            <i class="material-icons">date_range</i>
-                                           </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="bold waves-effect">
-                                <a class="collapsible-header" tabindex="0">Account
-                               <i class="chevron material-icons">chevron_left</i> 
-                                </a>
-                                <div class="collapsible-body">
-                                    <ul>
-                                        <li>
-                                            <a id="settings-start" href="#!" class="waves-effect active">Settings
-                                            <i class="material-icons">settings</i></a>
-                                        </li>
-                                        <li>
-                                            <a id="logout" href="logout.php" class="waves-effect active">Logout
-                                            <i class="material-icons">exit_to_app</i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
+                    <li class="bold waves-effect">
+                        <a class="collapsible-header" tabindex="0">Calendar
+                       <i class="chevron material-icons">chevron_left</i> 
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a id="calendar-start" href="#!" class="waves-effect active">Calendar
+                                    <i class="material-icons">date_range</i>
+                                   </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="bold waves-effect">
+                        <a class="collapsible-header" tabindex="0">Account
+                       <i class="chevron material-icons">chevron_left</i> 
+                        </a>
+                        <div class="collapsible-body">
+                            <ul>
+                                <li>
+                                    <a id="settings-start" href="#settings-wrapper" class="waves-effect active">Settings
+                                    <i class="material-icons">settings</i></a>
+                                </li>
+                                <li>
+                                    <a id="logout" href="logout.php" class="waves-effect active">Logout
+                                    <i class="material-icons">exit_to_app</i></a>
+                                </li>
+                            </ul>
+                        </div>
                     </li>
                 </ul>
-            </div>
-        </nav>
+            </li>
+        </ul>
     </header>
     <main>
         <div class="container">

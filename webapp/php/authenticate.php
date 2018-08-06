@@ -29,7 +29,7 @@
 	    {
 	        $authenticated = TRUE;
 	        $db->query('TRUNCATE TABLE currentuser');
-	        $db->query("INSERT INTO currentuser(email) VALUES ('$email')");
+	        $db->query("INSERT INTO currentuser(email) VALUES ('$userEmail')");
 	        break;
 	    }
 	}

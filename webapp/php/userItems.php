@@ -29,20 +29,24 @@
 	if( !empty($requestData['search']['value']) ) {
 		// if there is a search parameter
 		$sql = "SELECT Item, Quantity, TStamp ";
-		$sql.=" FROM employee";
-		$sql.=" WHERE employee_name LIKE '".$requestData['search']['value']."%' ";    // $requestData['search']['value'] contains search parameter
-		$sql.=" OR employee_salary LIKE '".$requestData['search']['value']."%' ";
-		$sql.=" OR employee_age LIKE '".$requestData['search']['value']."%' ";
-		$query=mysqli_query($conn, $sql) or die("employee-grid-data.php: get employees");
+		$sql.=" FROM itemlist";
+		$sql.=" WHERE Email LIKE '".$_SESSION['email']."'";
+		$sql.=" AND Item LIKE '".$requestData['search']['value']."%' ";    // $requestData['search']['value'] contains search parameter
+		$sql.=" OR Quantity LIKE '".$requestData['search']['value']."%' ";
+		$sql.=" OR TStamp LIKE '".$requestData['search']['value']."%' ";
+
+		$query=mysqli_query($mysqli, $sql) or die("Failed.");
 		$totalFiltered = mysqli_num_rows($query); // when there is a search parameter then we have to modify total number filtered rows as per search result without limit in the query 
 		$sql.=" ORDER BY ". $columns[$requestData['order'][0]['column']]."   ".$requestData['order'][0]['dir']."   LIMIT ".$requestData['start']." ,".$requestData['length']."   "; // $requestData['order'][0]['column'] contains colmun index, $requestData['order'][0]['dir'] contains order such as asc/desc , $requestData['start'] contains start row number ,$requestData['length'] contains limit length.
-		$query=mysqli_query($conn, $sql) or die("employee-grid-data.php: get employees"); // again run query with limit
+		$query=mysqli_query($mysqli, $sql) or die("Failed1"); // again run query with limit
 		
 	} else {	
-		$sql = "SELECT employee_name, employee_salary, employee_age ";
-		$sql.=" FROM employee";
+		$sql = "SELECT Item, Quantity, TStamp ";
+		$sql.=" FROM itemlist";
+		$sql.=" WHERE Email LIKE '".$_SESSION['email']."' ";
 		$sql.=" ORDER BY ". $columns[$requestData['order'][0]['column']]."   ".$requestData['order'][0]['dir']."   LIMIT ".$requestData['start']." ,".$requestData['length']."   ";
-		$query=mysqli_query($conn, $sql) or die("employee-grid-data.php: get employees");
+		#echo $sql;
+		$query=mysqli_query($mysqli, $sql) or die("Failed2.");
 		
 	}
 

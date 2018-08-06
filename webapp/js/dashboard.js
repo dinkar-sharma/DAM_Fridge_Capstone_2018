@@ -50,43 +50,16 @@ function show_image() {
     });
 }
 
-function fetch_user_data() {
-    var userItems = [];
-
-    $.ajax({
-        url: '../php/userItems.php',
-        type: 'POST',
-        success: function(res) {
-            userItems = res.data;
-            console.log(userItems);
-        },
-        error: function(res) {}
-    });
-
-    return userItems;
-}
 
 function init_dataTable() {
-    var data = fetch_user_data();
-    var data2 = [
-    {
-        "Item" : "apple",
-        "Quantity" : "3",
-        "TStamp" : "asdasfd"
-    }
-    ]
     $('#table').DataTable({
         "processing": true,
         "serverSide": true,
+        "scrollY": 200,
         "ajax" : {
             type: 'POST',
             url: '../php/userItems.php'
-        },
-        // "columns": [
-        //     { "data": "Item" },
-        //     { "data": "Quantity" },
-        //     { "data": "TStamp" }
-        // ]
+        }
     });
 }
 
