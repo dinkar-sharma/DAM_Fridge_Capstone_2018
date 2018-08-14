@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DAM Fridge-Viewfinder</title>
+    <title>DAM Fridge Cam - Viewfinder</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -33,7 +33,7 @@
         <div class="navbar-fixed">
             <nav class="navbar">
                 <div class="nav-wrapper">
-                    <a href="#!" class="brand-logo">Dashboard</a>
+                    <a href="dashboard.php" class="brand-logo">Dashboard</a>
                     <ul id="nav-mobile" class="right">
 <!--                         <li class="hide-on-med-and-down">
                             <a href="#!" data-target="NotificationDropdown" class="dropdown-trigger waves-effect"><i class="material-icons">notifications</i>
@@ -52,7 +52,7 @@
         </div>
         <ul id="sidenav-left" class="sidenav sidenav-fixed">
             <li>
-                <a href="#!" class="logo-container white-text">
+                <a href="dashboard.php" class="logo-container white-text">
                     <i class="material-icons left">account_circle</i>
                 </a>
             </li>
@@ -84,7 +84,7 @@
                         <div class="collapsible-body">
                             <ul>
                                 <li>
-                                    <a id="calendar-start" href="#!" class="waves-effect active">Calendar
+                                    <a id="calendar-start" href="dashboard.php#calendar-wrapper" class="waves-effect active">Calendar
                                     <i class="material-icons">date_range</i>
                                    </a>
                                 </li>
@@ -114,27 +114,39 @@
     </header>
     <main>
         <div class="container">
-            <div id="viewfinder-wrapper" class="col s12">
-                    <h2 class="white-text">Viewfinder</h2>
-                    <div class="card">
-                        <div class="card-image">
-                            <img id="stream" class="materialboxed" width="640" height="480" src="">
-                            <a id="camera" class="btn-floating halfway-fab waves-effect waves-light red btn-large red">
-                                <i id="camera-icon" class="large material-icons">camera</i>
-                            </a>
-                        </div>
-                        <div class="card-content">
-                            <h5 id="message">Click on the camera button to start the viewfinder.</h5>
-                        </div>
+            <h2 class="white-text">Viewfinder</h2>
+            <div id="viewfinder-wrapper" class="col s6">
+                <div class="card">
+                    <div class="card-image">
+                        <img id="stream" class="materialboxed" width="640" height="480" src="">
+                        <a id="camera" class="btn-floating halfway-fab waves-effect waves-light red btn-large red">
+                            <i id="camera-icon" class="large material-icons">camera</i>
+                        </a>
+                    </div>
+                    <div class="card-content">
+                        <h5 id="message">Click on the camera button to start the viewfinder.</h5>
                     </div>
                 </div>
+            </div>
+            <div id="authenticate-wrapper">
+              <!-- Modal Structure -->
+                <div id="modal" class="modal">
+                    <div class="modal-content">
+                        <h4>Modal Header</h4>
+                        <p>You are an unathourized user.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <footer class="page-footer">
         <div class="container">
             <div class="row">
                 <div class="col s6 m6">
-                    <h5 class="white-text">DAM Fridge</h5>
+                    <h5 class="white-text">DAM Fridge Cam</h5>
                     <p class="grey-text text-lighten-4">Engineering capstone 2018</p>
                 </div>
                 <div class="col s6 m3">
@@ -156,7 +168,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2018 DAM Fridge
+                © 2018 DAM Fridge Cam
             </div>
         </div>
     </footer>
@@ -164,5 +176,4 @@
 <!--JavaScript at end of body for optimized loading-->
 <script type="text/javascript" src="../3rd-party/materialize/js/materialize.js"></script>
 <script type="text/javascript" src="../js/viewfinder.js"></script>
-<!-- <script type="text/javascript" src="js/dashboard.js"></script> -->
 </html>

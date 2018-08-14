@@ -1,7 +1,12 @@
 <?php
 	session_start();
 	#header('Content-Type: application/json');
-	
+    if(!isset($_SESSION['email']))
+    {
+        echo "<p>You are not an authorized user. Click <a href=../index.html> here</a>  to sign up.</p>";
+        die();
+    }
+    
 	$columns = array( 
 	// datatable column index  => database column name
 		0 =>'Item', 

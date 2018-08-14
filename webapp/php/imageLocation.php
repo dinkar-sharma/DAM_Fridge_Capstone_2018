@@ -1,11 +1,11 @@
 <?php
 	session_start();
 
-	if (!isset($_SESSION['email'])) {
-	$msgArray = ['status' => 'error', 'msg' => 'You are not an authorized user.'];
-	echo json_encode($msgArray);
-	die();
-	} 
+    if(!isset($_SESSION['email']))
+    {
+        echo "<p>You are not an authorized user. Click <a href=../index.html> here</a>  to sign up.</p>";
+        die();
+    }
 
 	header('Content-Type: application/json');
 

@@ -1,5 +1,11 @@
 <?php
-require '../3rd-party/PHPMailer/PHPMailerAutoload.php';
+  require '../3rd-party/PHPMailer/PHPMailerAutoload.php';
+  
+    if(!isset($_SESSION['email']))
+    {
+        echo "<p>You are not an authorized user. Click <a href=../index.html> here</a>  to sign up.</p>";
+        die();
+    }
 
     try 
         {

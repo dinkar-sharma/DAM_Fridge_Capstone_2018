@@ -13,7 +13,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>DAM Fridge-Dashboard</title>
+    <title>DAM Fridge Cam-Dashboard</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -86,7 +86,7 @@
                         <div class="collapsible-body">
                             <ul>
                                 <li>
-                                    <a id="calendar-start" href="#!" class="waves-effect active">Calendar
+                                    <a id="calendar-start" href="#calendar-wrapper" class="waves-effect active">Calendar
                                     <i class="material-icons">date_range</i>
                                    </a>
                                 </li>
@@ -117,10 +117,9 @@
     <main>
         <div class="container">
         <div class="row">
-            <div class="col s12">
+            <div id="title" class="col s12">
                 <h2 class="white-text">Dashboard</h2>
             </div>
-                <!-- <h2 class="white-text">Current Items</h2> -->
             <div id="table-wrapper" class="col s12">
                 <div class="card large">
                     <div class="card-content">
@@ -136,7 +135,7 @@
                     </div>
                 </div>
             </div>    
-            <div id="image-wrapper" class="col l4 m6 s12">
+            <div id="image-wrapper" class="col l4 m4 s12">
                 <div class="card">
                     <div class="card-image">
                         <img id="image" class="materialboxed" src="">
@@ -146,7 +145,7 @@
                     </div>
                 </div>
             </div>
-            <div id="recipe-wrapper" class="col l4 m6 s12">
+            <div id="recipe-wrapper" class="col l4 m4 s12">
                 <div class="card">
                     <div class="card-content">
                         <span class="card-title">Recipe</span>
@@ -163,11 +162,26 @@
                         </div>
                     </div>
                 </div>
-            </div>       
-        </div>
+            </div>
+            <div id="modify-wrapper" class="col l4 m4 s12">
+                <div class="card">
+                    <div class="card-content">
+                        <span class="card-title">Delete Item</span>
+                        <div class="row">
+                            <form action="deleteItem.php" method="get">
+                                <div class="input-group ">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input id="item" name="item" type="text" class="validate"  placeholder="Enter Item's Name" required>
+                                </div>
+                                <button class="btn waves-effect waves-light red" name="decreaseq" type="submit" value="decreaseq">Delete Item<i class="material-icons right">delete</i></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>          
             <div id="calendar-wrapper" class="row">
                 <div class="col">
-                    <h2 class="white-text">Month View</h2>
+                    <h2 class="white-text">Calendar</h2>
                     <div class="card card-panel">
                         <div id="calendar">
                         </div>
@@ -218,7 +232,7 @@
         <div class="container">
             <div class="row">
                 <div class="col s6 m6">
-                    <h5 class="white-text">DAM Fridge</h5>
+                    <h5 class="white-text">DAM Fridge Cam</h5>
                     <p class="grey-text text-lighten-4">Engineering capstone 2018</p>
                 </div>
                 <div class="col s6 m3">
@@ -251,5 +265,5 @@
 <script src='../3rd-party/fullcalendar-3.9.0/lib/moment.min.js'></script>
 <script src='../3rd-party/fullcalendar-3.9.0/fullcalendar.js'></script>
 <script type="text/javascript" src="../3rd-party/DataTables/datatables.js"></script>
-
+<script type='text/javascript' src='../3rd-party/fullcalendar-3.9.0/gcal.js'></script>
 </html>

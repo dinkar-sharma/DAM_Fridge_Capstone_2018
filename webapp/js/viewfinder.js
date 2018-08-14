@@ -1,4 +1,9 @@
 function init_page() {
+    $(".brand-logo").text('Viewfinder');
+    get_user_info();
+}
+
+function get_user_info() {
     $.ajax({
         url: '../php/userInfo.php',
         type: 'POST',
@@ -23,7 +28,6 @@ function startStream() {
 }
 
 $("#camera").click(function(event) {
-
     startStream();
     $("#message").text("Click the check button to stop the viewfinder.");
 });

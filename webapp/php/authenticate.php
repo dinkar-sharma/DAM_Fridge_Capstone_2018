@@ -17,7 +17,7 @@
 	} 
 	catch (Exception $e) 
 	{
-	    error_log('Error connecting to database: '.$e->getMessage());
+	    echo('Error connecting to database: '.$e->getMessage());
 	}
 
 	$rows = $db->query('SELECT * FROM users');

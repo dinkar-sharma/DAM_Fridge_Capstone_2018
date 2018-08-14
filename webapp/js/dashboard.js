@@ -14,7 +14,27 @@ function init_page() {
         },
         error: function(res) {}
     });
+
+    //get_items();
 }
+
+// function get_items() {
+//     var list = [];
+
+//     $.ajax({
+//         url: '../php/modify.php',
+//         type: 'POST',
+//         success: function(res) {
+//             if (res.status == 'success') {
+//                 for (var i=0; i < res.data.length; i++) {
+//                     list.push("<li><a>\"res.data[i]\"</a></li>");
+//                 }
+//                 console.log(list);
+//             }
+//         },
+//         error: function(res) {}
+//     });
+// }
 
 function init_calendar() {
     $('#calendar').fullCalendar({
@@ -27,6 +47,10 @@ function init_calendar() {
             month: {
                 titleFormat: 'MMMM YYYY'
             }
+        },
+        googleCalendarApiKey: 'AIzaSyD4XPGyJ-osIO1HslvEkmmXzHJTghlPnW0',
+        events: {
+            googleCalendarId: 'glj6o83kbhbj267bvf2fvvfpq4@group.calendar.google.com'
         }
     })
 }
@@ -41,8 +65,7 @@ function show_image() {
                 var array = imageLocation.split('/');
                 var relativeLocation = array.splice(-3).join('/');
                 $("#image").attr('src', relativeLocation);
-            }
-            else {
+            } else {
                 $("#viewfinder-wrapper").hide();
             }
         },
@@ -56,10 +79,10 @@ function init_dataTable() {
         "processing": true,
         "serverSide": true,
         "scrollY": 200,
-        "ajax" : {
+        "ajax": {
             type: 'POST',
             url: '../php/userItems.php'
-        }
+        },
     });
 }
 
@@ -71,23 +94,37 @@ function userClickEvent(Event) {
         $("#table-wrapper").hide();
         $("#settings-wrapper").hide();
         $("#image-wrapper").hide();
+        $("#recipe-wrapper").hide();
+        $("#title").hide();
+        $("#modify-wrapper").hide();
         $("#calendar-wrapper").show();
     } else if (pressed == "settings") {
         $(".brand-logo").text('Settings');
         $("#table-wrapper").hide();
         $("#calendar-wrapper").hide();
         $("#image-wrapper").hide();
+        $("#recipe-wrapper").hide();
+        $("#modify-wrapper").hide();
+        $("#title").hide();
         $("#settings-wrapper").show();
     } else if (pressed == "dasboard") {
         $(".brand-logo").text('Dashboard');
         $("#calendar-wrapper").hide();
         $("#settings-wrapper").hide();
+        $("#title").show();
         $("#image-wrapper").show();
+        $("#recipe-wrapper").show();
         $("#table-wrapper").show();
-    } else {
+        $("#modify-wrapper").show();
+    } 
+    else {
         console.log('None pressed');
     }
 }
+
+$("#item-dropdown").on('click', {
+    pressed: "dropdown"
+}, userClickEvent);
 
 $("#calendar-start").on("click", {
     pressed: "calendar"
